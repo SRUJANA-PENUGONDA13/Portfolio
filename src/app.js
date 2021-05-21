@@ -6,6 +6,7 @@ const { spawn } = require("child_process")
 const { Console } = require('console')
 
 const app = express()
+const port = process.env.PORT || 3000
 // Express path config
 const publicDirectoryPath = path.join(__dirname,'../public')
 const utilsDirectoryPath = path.join(__dirname,'../utils/gmail')
@@ -18,7 +19,6 @@ app.set('view engine', 'hbs')
 hbs.registerPartials(partialssDirectoryPath)
 
 //Serving up Static Applications
-// Note If we not include this statement node js will not know from which folder it needs to load the files for css and js and img files
 app.use(express.static(publicDirectoryPath))
 
 app.get('',(req,res)=>
@@ -55,9 +55,6 @@ app.get('/contact',(req,res)=>
 })
 app.get('/sendEmail',(req,res)=>
 {
-    console.log("Request Name: ",req.query.name)
-    console.log("Request Email: ",req.query.email)
-    console.log("Message: ",req.query.message)
     const childPython = spawn('python',['./utils/gmail/send_mail.py',req.query.name,req.query.email,req.query.message])
     childPython.stdout.on('data',(data) => 
     {
@@ -81,10 +78,7 @@ app.get('*',(req,res)=>
     res.send("404 Page Not Found")
 })
 
-app.listen(3000,()=>
+app.listen(port,()=>
 {
   console.log("Server started")
 })
-
-//Use below command to run app.js when working with handlebars
-// nodemon app.js -e js,hbs
