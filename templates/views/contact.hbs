@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+    {{>header}}
+    <body>  
+        <div class="main-container">
+            {{>nav}} 
+            <div class = "main-content">
+                <section id ="contact">
+                    <div class = "g-heading">
+                        <div class = "g-watermark">
+                            Contact
+                        </div>
+                        <div class = "g-subheading">
+                            Get In Touch
+                            <div class = "g-underline">
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "contact-content">
+                        <div class="contact-left-area">
+                            <h4>ADDRESS</h4>
+                            <p>8-11-28/3,<br> Kotha Bavi Bazar,<br>Narasaraopet,<br>Guntur,<br>522601</p>
+                            <h4>FOLLOW ME</h4>
+                            <div class = "contact-info">
+                                <a href="https://www.linkedin.com/in/srujana-penugonda-49b9b9148" ><i class="fa fa-linkedin fa-lg"></i></a>
+                                <a href="https://github.com/SRUJANA-PENUGONDA13" ><i class="fa fa-github fa-lg"></i></a>
+                                <a href="https://leetcode.com/Srujana_Penugonda/" ><i class="fa fa-code fa-lg" ></i></a>
+                            </div>
+                        </div>
+                        <form name="contact"  action = "sendEmail" class="contact-right-area" autocomplete="off">
+                            <h4>SEND ME A NOTE</h4>
+                            <div>
+                                <div class="contact-first-input">
+                                    <input name="name" type="text" placeholder="Name" class="name-input" required="">
+                                    <input name="email" type="email" placeholder="Email" class="mail-input" required="">
+                                </div>
+                                <textarea name="message" class="text-input" placeholder="Type Something" required=""></textarea>
+                                <p>
+                                    <center>
+                                        <button type="submit" id="message">Send Message</button>
+                                    </center>
+                                </p>
+                            </div>
+                        </form>    
+                    </div>
+                    {{>footer}}
+                </section>
+            </div>          
+        </div>
+    </body>
+</html>   
