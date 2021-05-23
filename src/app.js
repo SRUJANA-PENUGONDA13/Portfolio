@@ -2,8 +2,7 @@
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
-const { spawn } = require("child_process")
-const { Console } = require('console')
+const request = require('request')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -55,22 +54,11 @@ app.get('/contact',(req,res)=>
 })
 app.get('/sendEmail',(req,res)=>
 {
-    const childPython = spawn('python',['./utils/gmail/send_mail.py',req.query.name,req.query.email,req.query.message])
-    childPython.stdout.on('data',(data) => 
+    url = 'https://personal-mail.herokuapp.com/'+'/'+'mail'+'/'+req.query.name+'/'+req.query.email+'/'+req.query.message
+    request(url, (error,response)=>
     {
-        console.log(`stdout: ${data}`);
-    })
-    childPython.stderr.on('data',(data) => 
-    {
-        console.log(`stderr:${data}`)
-    })
-    childPython.on('close',(code) => 
-    {
-        console.log(`Child process got closed:${code}`)
-    })
-
-    res.render('thankyou')
-   
+        res.render('thankyou')   
+    }) 
 })
 //Error messgaes for invalid pages
 app.get('*',(req,res)=>
