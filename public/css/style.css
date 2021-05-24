@@ -2,68 +2,107 @@
 @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
 /*body Section */
-body
-{
+html,body {
   margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+/* Main Container */
+.main-container
+{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
 }
 /* Left Section */
 .left-sec
 {
-  width : 270px;
+  width : 20%;
   background-color: rgb(68, 62, 62);
-  position: fixed;
   height: 100%;
   top:0;
-  border-right: 1px solid #e8dfec;
+  display: flex;
+  flex-direction: column;
+  border-right: 0.07vw solid #e8dfec;
+}
+.left-sec .logo
+{
+  height: 30%;
+  width: 100%;
+  margin-top: 3vh;
+  text-align: center;
+}
+.nav
+{
+  height: 35%;
+  width: 100%;
+}
+.contact-info
+{
+  height: 20%;
+  width: 100%;
 }
 /* Logo Section */
 .logo img
 {
-  height: 160px;
-  width: 160px;
+  height: 11.8vw;
+  width: 11.8vw;
   border-radius: 50%;
-  border: 8px solid lightgrey;
-  margin: 10px 0 5px;
+  border: 0.6vw solid lightgrey;
+  margin: 0.7vw 0 0.4vw;
 }
 .logo p
 {
   color: white;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.5vw;
 }
 /* Logo Section End */
 
 /* Nav Section */
 .left-sec .nav 
 {
-  margin : 50px 0 0px 35px;
+  margin : 3.7vw 0 0 2.6vw;
+}
+.nav ul
+{
+  margin: 0;
+  padding: 0;
+  padding-inline-start:3vw;
+  /* padding: 0; */
 }
 .nav li
 {
   list-style-type: none;
-  margin: 0 0 20px 0;  
+  margin: 0 0 1.5vw 0;  
 }
 .nav li a
 {
   color: white;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.5vw;
 }
 .nav li a i
 {
-  margin:0px 10px 0px 0;
+  margin:0 0.73vw 0 0;
+}
+.fa-lg
+{
+  font-size: 2vw;
 }
 /* Nav Section End*/
 
 /* Contact Info */
 .contact-info
 {
-  margin : 50px 0 0 70px;
+  margin : 3.7vw 0 0 5.12vw;
 }
 .contact-info a i
 {
   color: white;
-  margin:0px 10px 0px 0;
+  margin:0 0.7vw 0 0;
   text-decoration: none;
 }
 /* Contact Info End*/
@@ -74,7 +113,9 @@ body
 .main-content
 {
   margin : 0;
-  padding-left: 270px;
+  width: 80%;
+  height: 100%;
+  /* padding-left: 270px; */
 }
 /* Home Page */
 section
@@ -95,16 +136,16 @@ section
   height: 100%;
   text-align: center;
   display: inline-block;
-  margin-top: 220px;
-  font-size: 40px;
-  font-weight: 700;
+  margin-top: 16.22vw;
+  font-size: 2.9vw;
+  font-weight: 60vw;
  
 }
 .sub-heading
 {
   text-align: center;
   display: inline-block;
-  font-size: 18px;
+  font-size: 1.32vw;
   line-height: 1.7rem;
   font-weight: 400;
   color: black;
@@ -112,20 +153,20 @@ section
 .contact
 {
   text-align: center;
-  margin-top: 5px;
+  margin-top: 0.37vw;
 }
 .contact a
 {
   background-color: gray;
-  border-radius: 60px;
+  border-radius: 4.4vw;
   color: white;
-  padding: 5px 10px;
+  padding: 0.37vw 0.73vw;
   text-align: center;
   display: inline-block;
-  font-size: 20px;
+  font-size: 1.5vw;
   cursor: pointer;
   font-weight: 700;
-  border: 2px solid white;
+  border: 0.15vw solid white;
   text-decoration:none;
 }
 /* Home Content End */ 
@@ -150,7 +191,7 @@ section
 .g-watermark
 {
   position: relative;
-  font-size: calc(1.95rem + 8.4vw)!important;
+  font-size: 10vw;
   font-weight: 900;
   z-index: 0;
   color:lightgray;
@@ -170,32 +211,33 @@ section
 .g-subheading .g-underline {
   position: relative;
   background-color: rgb(68, 62, 62);
-  height: 3px;
-  width: 100px;
+  height: 0.22vw;
+  width: 7.32vw;
   margin: auto;
 }
 .content
 {
   width: 85%;
   margin: auto;
-  margin-top: 5px;
+  margin-top: 0.37vw;
   padding-bottom: 3rem;
   display: flex;
   justify-content: space-between;
   font-family: "Poppins",sans-serif;
+  flex-direction: row;
 }
 .summary
 {
   display: block;
   color : rgb(68, 62, 62);
-  width : 100%;
+  width : 70%;
   height: 100%;
   margin: 0px;
 }
 .summary h2, .hobbies h2
 {
   margin: 0px;
-  font-size: 18px;
+  font-size: 1.33vw;
   color: rgb(68, 62, 62);
 }
 .summary p, .hobbies ul li 
@@ -203,13 +245,13 @@ section
   line-height: 1.7rem;
   margin-top: .7rem;
   color: black;
-  font-size: 18px;
+  font-size: 1.31vw;
   line-height: 1.7rem;
   font-weight: 400;
 }
 .hobbies
 {
-  width : 60%;
+  width : 30%;
   height: 100%;
   margin: 0px; 
   color : rgb(68, 62, 62);
@@ -217,7 +259,7 @@ section
 
 .hobbies ul li 
 { 
-  margin-left: 10px;
+  margin-left: 0.73vw;
   list-style-type: disc;
 }
 /* About Page End */
@@ -252,8 +294,8 @@ section
     padding : 2px;
     background-color: rgb(68, 62, 62);
     color: #007bff;
-    height: 40px;
-    width: 50px;
+    height: 3vw;
+    width: 3.7vw;
     border-radius: 1rem;
 }
 .card-content
@@ -264,8 +306,8 @@ section
 
 .card-content h3
 {
-  margin: 5px 0 0 0;
-  font-size: 20px;
+  margin: 0.37vw 0 0 0;
+  font-size: 1.48vw;
   color:rgb(68, 62, 62);
 }
 /* Skills Page End */
@@ -279,17 +321,17 @@ section
 }
 .project-details ul
 {
-  font-size: 22px;
-  line-height: 1.7rem;
+  font-size: 1.62vw;
+  line-height: 0.7vw;
   font-weight: 400;
   font-family: "Poppins",sans-serif;
   display: flex;
-  margin-left: 20px;
+  margin-left: 1.48vw;
   justify-content: center;
 }
 .project-details li
 {
-  padding-right: 100px;
+  padding-right: 7.4vw;
   font-weight: bold;
   list-style-type: none;
 }
@@ -298,7 +340,7 @@ section
   color:rgb(70, 64, 64);
   text-decoration: none;
   display: inline-block;
-  padding-bottom: 10px;
+  padding-bottom: 0.74vw;
 }
 .project-details li a:hover
 {
@@ -309,11 +351,10 @@ section
 {
   display: flex;
   flex-wrap: wrap;
-  margin: auto 50px auto 50px;
+  margin: auto 3.7vw auto 3.7vw;
   justify-content: center;
   
 }
-
 .project-card
 {
   width: 43%;
@@ -321,26 +362,26 @@ section
   color: white;
   background-color: gray;
   margin: 0 auto 1rem; 
-  height: 365px;
+  height: 27vw;
   z-index: 2;
 }
 .project-area
 {
-  margin :30px;
-  line-height: 2rem;
-  font-size: 18px;
+  margin : 2.2vw;
+  line-height: 2.4vw;
+  font-size: 1.23vw;
   font-weight: 400;
   font-family: "Poppins",sans-serif;
 }
 .project-area .project-link1
 {
-  margin-top: 22px;
+  margin-top: 1.62vw;
 }
 .project-area a
 {
   color:rgb(68, 62, 62);
-  line-height: 3rem;
-  font-size: 18px;
+  line-height: 2.3vw;
+  font-size: 1.42vw;
   font-weight: 400;
   font-family: "Poppins",sans-serif;
 }
@@ -358,9 +399,9 @@ section
 }
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px 0 2px;
+  height: 1.11vw;
+  width: 1.11vw;
+  margin: 0 0.15vw 0 0.15vw;
   background-color: gray;
   border-radius: 50%;
   display: inline-block;
@@ -382,29 +423,29 @@ section
 {
   display: flex;
   text-align: left;
-  margin: 50px 0 0 100px;
-  line-height: 1.5rem;
-  font-size: 18px;
+  margin: 3.7vw 0 0 7.4vw;
+  line-height: 1.8vw;
+  font-size: 1.33vw;
   font-weight: 400;
   font-family: "Poppins",sans-serif;
   color: rgb(68, 62, 62);
 }
 .contact-left-area h4, p, .contact-right-area h4
 {
-  margin: 0 0 10px 0;
+  margin: 0 0 0.74vw 0;
 }
 .contact-left-area .contact-info
 {
-  margin: 0px;
+  margin: 0;
 }
 .contact-left-area .contact-info i
 {
   color: rgb(68, 62, 62);
-  margin: 0px 10px 0 0;
+  margin: 0 0.74vw 0 0;
 }
 .contact-right-area
 {
-  margin-left: 70px;
+  margin-left: 5.2vw;
 }
 .contact-first-input 
 {
@@ -412,35 +453,35 @@ section
 }
 .contact-first-input input
 {
-  margin: 0 20px 10px 0;
-  height: 40px;
-  width: 340px;
+  margin: 0 1.48vw 0.74vw 0;
+  height: 3vw;
+  width: 25.1vw;
   background-color: lightgray;
   border:0px;
   outline: none;
   font-family: "Poppins",sans-serif;
-  font-size: 18px;
+  font-size: 1.33vw;
   color:rgb(68, 62, 62);
 }
 .text-input
 {
-  height: 130px;
-  width: 712px;
+  height: 9.6vw;
+  width: 52.5vw;
   background-color: lightgray;
   outline: none;
   border: 0px;
   text-align: left;
   font-family: "Poppins",sans-serif;
-  font-size: 18px;
+  font-size: 1.33vw;
   color:rgb(68, 62, 62);
 }
 .contact-right-area button 
 {
   font-family: "Poppins",sans-serif;
-  margin-top: 20px;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  border-radius: 10rem;
+  margin-top: 1.48vw;
+  padding: 1vw 2vw;
+  font-size: 1vw;
+  border-radius: 10vw;
   background-color: rgb(68, 62, 62);
   color:white;
   cursor: pointer;
@@ -454,19 +495,19 @@ section
 {
   text-align: center;
   font-family: "Poppins",sans-serif;
-  font-size: 50px;
+  font-size: 3.7vw;
   color:rgb(68, 62, 62);
-  margin: 50px 0 220px 210px;
+  margin: 3.7vw 0 16.2vw 15.5vw;
   width: 100%;
 }
 /* Contact Page End */
 /* footer */
 footer
 {
-  margin-top: 30px;
-  height: 50px;
+  margin-top: 2.2vw;
+  height: 3.7vw;
   background-color: lightgray;
-  padding: 30px 0 0 50px;
+  padding: 2.2vw 0 0 3.7vw;
   color: rgb(68, 62, 62);
 }
 /* footer page end */

@@ -76,7 +76,6 @@ const projectDetails = (projects)=>
         var htmlEle = "";
         for (i = 0; i < projects.length; i++) 
         {
-            console.log("Hello");
             htmlEle+="<div class='project-card'>";
             htmlEle+='<div class="project-area">';
             htmlEle+='<div class="project-head">';
@@ -95,7 +94,7 @@ const projectDetails = (projects)=>
             htmlEle+=projects[i]['link1'];
             htmlEle+='><b>Visit Live</b></a>';
             htmlEle+='</div>';
-            htmlEle+='<div class="project-link1">';
+            htmlEle+='<div class="project-link2">';
             htmlEle+='<a href=';
             htmlEle+=projects[i]['link2'];
             htmlEle+='><b>View Code On Github</b></a>';
