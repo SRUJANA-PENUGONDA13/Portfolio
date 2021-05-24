@@ -29,11 +29,11 @@ html,body {
 }
 .left-sec .logo
 {
-  height: 30%;
   width: 100%;
   margin-top: 3vh;
   text-align: center;
 }
+/*
 .nav
 {
   height: 35%;
@@ -43,7 +43,7 @@ html,body {
 {
   height: 20%;
   width: 100%;
-}
+} */
 /* Logo Section */
 .logo img
 {
