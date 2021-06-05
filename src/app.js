@@ -54,11 +54,21 @@ app.get('/contact',(req,res)=>
 })
 app.get('/sendEmail',(req,res)=>
 {
-    url = 'https://personal-mail.herokuapp.com/'+'/'+'mail'+'/'+req.query.name+'/'+req.query.email+'/'+req.query.message
-    request(url, (error,response)=>
+    try
     {
-        res.render('thankyou')   
-    }) 
+        feedback = "You got feedback for your portfolio. Please find the details Feedback: "+req.query.message
+        message = { "senderName" : req.query.name, "receiverName" : "Srujana" ,"mail" : req.query.email , "message" : feedback }
+
+        url = 'https://personal-mail.herokuapp.com/'+'mail'+'/'+'srujanapenugonda1318@outlook.com'+'/'+'Portfolio Feedback'+'/'+JSON.stringify(message)
+        request(url, (error,response)=>
+        {
+            res.render('thankyou')   
+        }) 
+    }
+    catch(e)
+    {
+        console.log("Error Occured",e)
+    }
 })
 //Error messgaes for invalid pages
 app.get('*',(req,res)=>
