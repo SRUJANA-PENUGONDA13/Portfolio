@@ -56,7 +56,7 @@ app.get('/sendEmail',(req,res)=>
 {
     try
     {
-        feedback = "You got feedback for your portfolio. Please find the details<br><b>Feedback:</b> "+req.query.message
+        feedback = "You got feedback for your portfolio. Please find the details<br>Feedback: "+req.query.message
         message = { "senderName" : req.query.name, "receiverName" : "Srujana" ,"mail" : req.query.email , "message" : feedback }
 
         url = 'https://personal-mail.herokuapp.com/'+'mail'+'/'+'srujanapenugonda1318@outlook.com'+'/'+'Portfolio Feedback'+'/'+JSON.stringify(message)
